@@ -17,7 +17,7 @@ Examples:
        EXIF date, but log everything.
         # python photocopy.py -j jpg Z:\photosync target/
 
-    2. More complex. Move (-m yes) files by extensions shown from source (Z:\photosync) to target into folders   
+    2. More complex. Move (-m yes) files by extensions shown from source (Z:\photosync) to target into folders
         named YYYY_MM_DD using the EXIF Creation Date in the files. File without EXIF date will use the file
         system creation date to name target folders. Log everything.
         # python photocopy.py -m yes -x no -j gif,png,jpg,mov,mp4 Z:\photosync target/
@@ -72,12 +72,12 @@ def get_created_date(filename):
         except Exception as err:
             logger.debug("Metadata extraction error: %s" % err)
             metadata = None
-        if not metadata:
-            logger.debug("Unable to extract metadata")
-        else:
-            cd = metadata.getValues("creation_date")
-            if len(cd) > 0:
-                created_date = cd[0]
+    if not metadata:
+        logger.debug("Unable to extract metadata")
+    else:
+        cd = metadata.getValues("creation_date")
+        if len(cd) > 0:
+            created_date = cd[0]
     return created_date
 
 
