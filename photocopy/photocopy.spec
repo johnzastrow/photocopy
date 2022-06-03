@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['photocopy\\photocopy.py'],
+    ['photocopy.py'],
     pathex=[],
     binaries=[],
     datas=[],
